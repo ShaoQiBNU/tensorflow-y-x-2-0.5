@@ -49,8 +49,7 @@ tensorflow训练y=x^2-0.5，构建最简单的神经网络，一个输入层，�
 
 # 损失函数
 ## 计算输出层的预测值和真实值间的误差，对二者的差的平方求和再取平均，得到损失函数。
-		loss=tf.reduce_mean(tf.reduce_sum(tf.square(ys-prediction),
-                               reduction_indices=[1]))
+		loss=tf.reduce_mean(tf.reduce_sum(tf.square(ys-prediction),reduction_indices=[1]))
 
 其中，reduction_indices表示按哪个坐标轴求和，如图所示![](https://img-blog.csdn.net/20170617131947866?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb2Rvbmd4aWV4aWU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
