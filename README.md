@@ -7,8 +7,9 @@ tensorflow训练y=x^2-0.5，构建最简单的神经网络，一个输入层，�
 
 # 生成数据
 ## 采用np生成等差数列，（-1,1）之间，将其shape由（300，）转换为（300,1）
+		
 		x_data=np.linspace(-1,1,300)[:,np.newaxis]
-		#上面也可以写成这种形式 x_data=np.linspace(-1,1,300)[:,None]
+上面也可以写成这种形式 x_data=np.linspace(-1,1,300)[:,None]		
 		print(x_data.shape)
 
 ##  产生噪声，均值为0，方差为0.05的正态分布
@@ -24,6 +25,7 @@ tensorflow训练y=x^2-0.5，构建最简单的神经网络，一个输入层，�
 
 # 神经网络模型
 		def add_layer(inputs, in_size, out_size, activation_function=None):
+			
 			##### weights ######
 			weights=tf.Variable(tf.random_normal([in_size, out_size]))
     
