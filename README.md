@@ -24,23 +24,22 @@ tensorflow训练y=x^2-0.5，构建最简单的神经网络，一个输入层，�
 
 # 神经网络模型
 		def add_layer(inputs, in_size, out_size, activation_function=None):
+			##### weights ######
+			weights=tf.Variable(tf.random_normal([in_size, out_size]))
     
-    		##### weights ######
-    		weights=tf.Variable(tf.random_normal([in_size, out_size]))
+    			##### biases ######
+    			biases=tf.Variable(tf.zeros([1, out_size])+0.1)
     
-    		##### biases ######
-    		biases=tf.Variable(tf.zeros([1, out_size])+0.1)
+    			##### biases ######
+    			Wx_plus_b=tf.matmul(inputs, weights)+biases
     
-    		##### biases ######
-    		Wx_plus_b=tf.matmul(inputs, weights)+biases
+    			##### activation ######
+    			if activation_function is None:
+        			outputs=Wx_plus_b
+    			else:
+        			outputs=activation_function(Wx_plus_b)
     
-    		##### activation ######
-    		if activation_function is None:
-        		outputs=Wx_plus_b
-    		else:
-        		outputs=activation_function(Wx_plus_b)
-    
-    		return outputs
+    			return outputs
 ## 一个输入层，一个隐藏层（20个神经元），一个输出层
 
 ### 隐藏层
